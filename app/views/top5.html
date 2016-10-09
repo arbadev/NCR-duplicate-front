@@ -1,0 +1,28 @@
+<div class="container-table">
+  <div class="panel panel-info">
+    <!-- Default panel contents -->
+    <div class="panel-heading"><h3> Top 5 most duplicates </h3></div>
+    <div class="panel-body">
+      <p>In the following table you will see the most frequent duplicates and
+        its quantity</p>
+
+
+        <!-- Table -->
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Duplicate</th>
+              <th>Quantity</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr ng-repeat="d in top5" >
+              <td>{{d.duplicated}}</td>
+              <td>{{d.quantity}}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+    </div>
+  </div>

@@ -8,28 +8,18 @@
 * Controller of the ncrDuplicateFrontApp
 */
 angular.module('ncrDuplicateFrontApp')
-.controller('MainCtrl', function ($scope, $http) {
-  $scope.SendData = function () {
-    console.log('duplicate', $scope.duplicate);
-    // use $.param jQuery function to serialize data from JSON
-    var data = {
-      duplicate: $scope.duplicate
-    };
-
-    var config = {
-      headers : {
-        'Content-Type': 'application/json'
-      }
-    }
-    $http.post('http://localhost:8443/duplicates', data, config)
-    .success(function (data, status, headers, config) {
-      $scope.PostDataResponse = data;
-    })
-    .error(function (data, status, header, config) {
-      $scope.ResponseDetails = "Data: " + data +
-      "<hr />status: " + status +
-      "<hr />headers: " + header +
-      "<hr />config: " + config;
+.controller('MainCtrl', function ($scope, duplicateService) {
+  $scope.sendDuplicate = function () {
+    var duplicate = $scope.duplicate;
+    duplicateService.postDuplicate(duplicate).then(function (response) {
+      console.log('response', response);
     });
   };
+
+  $scope.top5 = null;
+  duplicateService.getTop5().then(function (top5) {
+    $scope.top5 = top5.data;
+    console.log('top5', $scope.top5);
+  });
+
 });
