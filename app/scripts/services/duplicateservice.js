@@ -27,4 +27,26 @@ angular.module('ncrDuplicateFrontApp')
       url: 'http://localhost:8443/duplicates/top5',
     });
   }
+
+  this.getCount = function (duplicate) {
+    return $http({
+      method: 'GET',
+      url: 'http://localhost:8443/duplicates/count',
+      params: {
+        duplicate: duplicate
+      }
+    });
+  }
+
+  this.getInvalidInputs = function () {
+    return $http({
+      method: 'GET',
+      url: 'http://localhost:8443/duplicates/',
+      params: {
+        validInput: false
+      }
+    });
+  }
+
+
 });

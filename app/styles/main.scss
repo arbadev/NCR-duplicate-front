@@ -97,3 +97,15 @@ body {
 }.cplaceholder {
     text-align:center
 }
+
+.panel > .panel-heading {
+    background-image: none;
+    background-color: #54ba3b;
+    color: white;
+}
+
+.topcorner{
+  position:relative;;
+  right:100px;
+   top  :100px;
+ }

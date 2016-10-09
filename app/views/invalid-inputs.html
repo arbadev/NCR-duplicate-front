@@ -1,0 +1,27 @@
+<div class="container-table">
+  <div class="panel panel-info">
+    <!-- Default panel contents -->
+    <div class="panel-heading"><h3> Invalid inputs </h3></div>
+    <div class="panel-body">
+      <p>In the following table you will see the a list of invalid inputs seen so far. </p>
+
+
+        <!-- Table -->
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Duplicate</th>
+              <th>Quantity</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr ng-repeat="i in invalidInputs" >
+              <td>{{i.duplicated}}</td>
+              <td>{{i.quantity}}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+    </div>
+  </div>

@@ -29,6 +29,11 @@ angular
         controller: 'MainCtrl',
         controllerAs: 'main'
       })
+      .when('/invalid-inputs', {
+        templateUrl: 'views/invalid-inputs.html',
+        controller: 'MainCtrl',
+        controllerAs: 'main'
+      })
       .otherwise({
         redirectTo: '/'
       });
