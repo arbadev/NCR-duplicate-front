@@ -1,16 +1,45 @@
-<<<<<<< HEAD
-# ncr-duplicate-front
 
-This project is generated with [yo angular generator](https://github.com/yeoman/generator-angular)
-version 0.15.1.
+# NCR-Duplicates-front
+NCR code test
 
-## Build & development
+Table of Contents
+-----------------
 
-Run `grunt` for building and `grunt serve` for preview.
+- [Prerequisites](#prerequisites)
+- [Getting Started](#getting-started)
 
-## Testing
+Prerequisites
+-------------
 
-Running `grunt test` will run the unit tests with karma.
-=======
-# NCR-duplicate-front
->>>>>>> a92c70489c95e1856b4f04706862b247743a3324
+- [Grunt](http://gruntjs.com/getting-started)
+- [Bower] (https://bower.io/#install-bower)
+- [Yeoman Angularjs generator requirements](https://github.com/yeoman/generator-angular)
+
+Install `yo`, `grunt-cli`, `bower`, `generator-angular` and `generator-karma`:
+```
+npm install -g grunt-cli bower yo generator-karma generator-angular
+```
+
+Getting Started
+---------------
+
+The way to get started this project is to clone the repository:
+
+```bash
+# Get repository from github
+git clone https://github.com/arbadev/NCR-duplicate-front.git projectName
+
+# Change directory
+cd projectName
+
+# Install NPM dependencies
+npm install
+
+# Install Bower dependencies
+bower install
+
+# Install ngtoast bower component manually (issue)
+bower install ngtoast --production
+
+# Start the server with
+grunt serve  // client url: 'http://localhost:9000/'
