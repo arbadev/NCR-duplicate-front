@@ -8,11 +8,20 @@
 * Controller of the ncrDuplicateFrontApp
 */
 angular.module('ncrDuplicateFrontApp')
-.controller('MainCtrl', function ($scope, duplicateService) {
+.controller('MainCtrl', function ($scope, duplicateService,ngToast) {
   $scope.sendDuplicate = function () {
+
     var duplicate = $scope.duplicate;
     duplicateService.postDuplicate(duplicate).then(function (response) {
-      console.log('response', response);
+      duplicate = response.data
+      if (duplicate.quantity > 1) {
+        ngToast.create(duplicate.duplicate + 'its a duplicate input...');
+      }else {
+        ngToast.create({
+          className: 'warning',
+          content: '<a href="#" class="">not duplicate</a>'
+        });
+      }
     });
     $scope.duplicate = null;
   };
